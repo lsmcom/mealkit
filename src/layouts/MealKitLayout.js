@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Intro = () => {
+const MealKitLayout = () => {
   return (
-      <div className='relative w-full h-44'>
+    <div className='relative w-full h-44'>
         <div className='fixed right-96 top-2 font-thin text-inherit text-gray-600'>
           <a className='cursor-pointer text-sm'> 회원가입 </a>
           <a className='px-3 text-xs'> | </a>
@@ -13,4 +13,4 @@ const Intro = () => {
   )
 }
 
-export default Intro
+export default MealKitLayout
