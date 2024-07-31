@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import { FiSearch } from "react-icons/fi";
 import { FaRegCircleXmark } from "react-icons/fa6";
@@ -6,6 +6,12 @@ import { MdOutlineContactPage } from "react-icons/md";
 import { FaBasketShopping } from "react-icons/fa6";
 
 const Header = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  const showClickHandle = () => {
+    setIsShow(prevIsShow => !prevIsShow)
+  };
+
   return (
     <header className='header'>
       <div className='header-in'>
@@ -29,6 +35,7 @@ const Header = () => {
               <input type='search' 
                     placeholder='상품을 검색하세요.'
                     className='search-input'
+                    onClick={showClickHandle}
               />
               <button type='button' 
                     className='search-btn'
@@ -37,7 +44,7 @@ const Header = () => {
               </button>
           </div>
           {/* search 창 */}
-          <div className='search-layer'>
+          <div className={isShow ? 'search-layer on' : 'search-layer'}>
             <div className='popular'>
                 <h2>인기 검색어</h2>
             </div>
@@ -94,8 +101,9 @@ const Header = () => {
             </div>
             {/* 최근검색어 */}
           </div>
+          {/* 검색레이어 */}
         </div>
-        {/* 검색레이어 */}
+        {/* search부분 */}
         <div className='my-menu'>
           <ul>
             <li>
