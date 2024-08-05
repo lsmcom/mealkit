@@ -1,22 +1,20 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/home/Home";
-import MealKits from "./routes/mealkits/MealKits";
+import Header from "./components/header/Header";
 
 function App() {  
   return (
     <div className="App"> 
-       <header>
-          <ul className="flex gap-48">
-            <li> <a href="/mealkits">MealKits</a></li>
-          </ul>
-       </header>
 
-       <Routes>
-          <Route path="/"  element={ <Home /> }/>
-          <Route path="/mealkits"  element={ <MealKits /> } />
-       </Routes>
+      <header>
+        <Header />
+      </header>
 
-       <footer>footer</footer>
+      <Routes>
+        <Route path="/"  element={ <Home /> }/>
+      </Routes>
+
+      <footer>footer</footer>
     </div>
   );
 }

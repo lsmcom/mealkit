@@ -10,7 +10,7 @@ const sections = [
   { id : 'review', title : '제품리뷰'},
 ]
 
-const MealKits = () => {
+const Home = () => {
   const [ activeSection, setActiveSection ] = useState(0)
   const [ showTooltip, setShowTooltip ] = useState(null)
   const sectionRefs = useRef(sections.map(()=>React.createRef()))
@@ -77,4 +77,4 @@ const MealKits = () => {
   )
 }
 
-export default MealKits
+export default Home

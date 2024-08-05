@@ -1,10 +1,12 @@
-ol, ul{
-    list-style: none;
+.text-green{
+    color: #2E9F41 !important;
 }
-a{
-    background: transparent;
-    text-decoration: none;
-    color: inherit;
+.text-blue{
+    color: #4598E5 !important;
+}
+.text-orange{
+    color: #FF6001 !important;
+    font-weight: bold;
 }
 
 .header{
@@ -144,6 +146,37 @@ a{
 .popular-rank .list > li:last-child{
     border-bottom: 0;
 }
+.popular-rank li .num{
+    display: inline-block;
+    width: 16px;
+    margin-right: 7px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.popular-rank li .productName{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    white-space: nowrap;
+    word-break: break-all;
+    width: 100px;
+}
+.popular-rank li .state{
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    font-size: 11px;
+    transform: translateY(-50%);
+}
+.down-icon{
+    margin: 2px 5px 0 0;
+    vertical-align: middle;
+}
+.up-icon{
+    margin: 2px 5px 0 0;
+    vertical-align: middle;
+}
 .recent-search{
     border-top: 10px solid #f2f2f2;
 }
@@ -165,6 +198,40 @@ a{
 }
 .recent-search .recent .search-delete > span{
     position: relative;
+}
+.recent-list{
+    padding: 15px 20px 10px;
+}
+.recent-list li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1px 5px 0;
+}
+.recent-word{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    background: #fff;
+}
+.recent-word > .text{
+    display: inline-block;
+    vertical-align: top;
+    padding: 7px 0 7px 14px;
+    font-size: 13px;
+    color: #333;
+}
+.recent-word > .recent-text-del{
+    vertical-align: top;
+    margin-top: -1px;
+    height: 30px;
+    padding: 11px;
+}
+.x-del-icon{
+    position: relative;
+    display: block;
+    width: 8px;
+    height: 8px;
+    color: #666;
 }
 .no-data{
     padding: 40px 0;
