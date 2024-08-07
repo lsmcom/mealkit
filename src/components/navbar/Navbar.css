@@ -39,7 +39,7 @@
     width: 200px;
 }
 .category-menu .category-dep1{
-    max-height: 318px;
+    height: 280px;
     overflow-y: auto;
     overflow-x: hidden;
     background: #fff;
@@ -50,6 +50,13 @@
 }
 .category-menu .category-dep1 > li{
     padding: 5px 5px;
+}
+.category-menu .category-dep1 > li > a:hover .menu{
+    color: #ff6b00;
+}
+.category-dep1 > li > a{
+    display: block;
+    width: 100%;
 }
 .category-dep1 > li .all-icon{
     vertical-align: middle;
@@ -63,6 +70,28 @@
     line-height: 2.1;
     margin-left: 4px;
     font-size: 14px;
+}
+.category-menu .category-dep2{
+    position: absolute;
+    top: 0;
+    left: 190px;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    outline: 1px solid #ff6b00;
+    border-top: 0;
+    border-left: 0;
+    padding-top: 5px;
+    min-height: 100%;
+}
+.category-menu .category-dep2 > li > a{
+    display: block;
+    padding: 8px 18px;
+    font-size: 14px;
+}
+.category-menu .category-dep2 > li > a:hover > span{
+    color: #ff6b00;
 }
 .main-nav .main-menu{
     width: 100%;

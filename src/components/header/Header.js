@@ -14,6 +14,7 @@ const Header = () => {
 
   const [searchData, setSearchData] = useState('');
   const [recentSearches, setRecentSearches] = useState([]);
+  // 검색어 저장 기능
 
   useEffect(()=>{
     const storedSearches = JSON.parse(localStorage.getItem('recentSearches'));
@@ -24,6 +25,7 @@ const Header = () => {
 
   useEffect(()=>{
     localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+    // 데이터가 없을 때 에러날 수 있으므로 그외 처리
   }, [recentSearches])
 
   // 검색어를 추가하는 함수
@@ -41,10 +43,16 @@ const Header = () => {
     }
   }
 
+  // 특정구역에서 event 발생X
+  const handleMouseDown = (event)=>{
+    event.preventDefault();
+  }
+
   // 개별삭제
-  const deleteRecentData = (data)=>{
-    const updateRecent = recentSearches.filter(item => item !== data);
+  const deleteRecentData = (data)=>{ 
+    const updateRecent = recentSearches.filter(item => !item.includes(data)); 
     setRecentSearches(updateRecent);
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
   }
 
   // 전체 삭제
@@ -79,6 +87,7 @@ const Header = () => {
                     ref={searchRef}
                     onFocus={()=>setIsShow( true )}
                     onBlur={()=>setIsShow( false )}
+                    // http://localhost:3000/#category-menu?searchFood=대파
                     value={searchData}
                     onChange={(e)=>setSearchData(e.target.value)}
                     onKeyDown={enterHandle}
@@ -119,7 +128,7 @@ const Header = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="href">
+                    <a href="#">
                       <span className='num'>4</span>
                       <span className='productName'>베이컨쉬림프 알리오올리오</span>
                       <span className='state text-green'>NEW</span>
@@ -182,6 +191,7 @@ const Header = () => {
                   <button className='search-delete'
                     style={recentSearches.length > 0 ? {display : 'block'} : {display : 'none'}}
                     onClick={clearRecentSearch}
+                    onMouseDown={handleMouseDown}
                   >
                     <span>전체삭제</span>
                   </button>
@@ -190,14 +200,16 @@ const Header = () => {
                   {/* 검색어 있는 경우 */}
                   <ul className='recent-list'>
                     {
-                      recentSearches.map((item, index) => (
+                      recentSearches.length >=1 && recentSearches.map((item, index) => (
                         <li key={index}>
                           <div className='recent-word'>
-                            <a href='#' className='text'>{item}</a>
+                            <span className='text'>{item}</span>
+                            {/* 최근 검색어 : 검색시 다시 검색하도록 하는 기능 */}
                             <button className='recent-text-del'
-                              onClick={()=> deleteRecentData(item)}
-                            >
-                              <FaX className='x-del-icon'/>
+                              onClick={()=> deleteRecentData
+                              (item)}
+                              onMouseDown={handleMouseDown}
+                            > <FaX className='x-del-icon'/>
                             </button>
                           </div>
                         </li>
