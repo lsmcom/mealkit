@@ -6,7 +6,7 @@
     position: relative;
     width: 1200px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 432px;
     padding-left: 178px;
     box-sizing: content-box;
     padding-left: 178px;
@@ -135,4 +135,20 @@
 }
 .main-nav .main-menu > ul > li > a:hover .ora-text{
     opacity: 1;
+}
+.category-menu > ul > li{
+    display: flex;
+    align-items: center;
+}
+.category-menu > ul > li > a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.dep1-arrow{
+    position: absolute;
+    font-size: 20px;
+    color: #ff6b00;
+    right: 4px;
+    vertical-align: middle;
 }

@@ -8,12 +8,6 @@
     color: #FF6001 !important;
     font-weight: bold;
 }
-
-.header{
-    width: 100%;
-    position: relative;
-    z-index: 20;
-}
 .header-in{
     position: relative;
     max-width: 1200px;

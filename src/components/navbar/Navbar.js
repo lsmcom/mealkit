@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import './Navbar.css'
 import { RiMenu2Fill } from "react-icons/ri";
 import { CgMenuGridR } from "react-icons/cg";
+import { IoMdArrowDropleft } from "react-icons/io";
 
 const Navbar = () => {
 
@@ -124,6 +125,13 @@ const Navbar = () => {
                 <a href='#'>
                   <i className='all-icon'></i>
                   <span className='menu'>밀키트</span>
+                  <i className='dep1-arrow'
+                      ref={mealKitRef}
+                      style={{ display : isMealKitMenuShow ? 'block' : 'none'}}
+                      onMouseEnter={handleMouseEnterMealKit}
+                      onMouseLeave={handleMouseLeaveMealKit}>
+                      <IoMdArrowDropleft />
+                  </i> 
                 </a>
                 <ul className='category-dep2'
                   ref={mealKitMenuRef}
@@ -177,7 +185,7 @@ const Navbar = () => {
               <li>
                 <a href='#'>
                   <i className='all-icon'></i>
-                  <span className='menu'>베스트</span>
+                  <span className='menu'>베스트</span>  
                 </a>
               </li>
               <li
@@ -188,6 +196,13 @@ const Navbar = () => {
                 <a href='#'>
                   <i className='all-icon'></i>
                   <span className='menu'>갑자기 땡긴다면?</span>
+                  <i className='dep1-arrow'
+                      ref={cravingMenuRef}
+                      style={{ display : isCravingMenuShow ? 'block' : 'none'}}
+                      onMouseEnter={handleMouseEnterCraving}
+                      onMouseLeave={handleMouseLeaveCraving}>
+                    <IoMdArrowDropleft />
+                  </i>
                 </a>
                 <ul className='category-dep2'
                   ref={cravingMenuRef}
@@ -230,6 +245,13 @@ const Navbar = () => {
                 <a href='#'>
                   <i className='all-icon'></i>
                   <span className='menu'>강력 추천!</span>
+                  <i className='dep1-arrow'
+                      ref={suggestRef}
+                      style={{ display : isSuggestMenuShow ? 'block' : 'none'}}
+                      onMouseEnter={handleMouseEnterSuggest}
+                      onMouseLeave={handleMouseLeaveSuggest}>
+                    <IoMdArrowDropleft />
+                  </i>       
                 </a>
                 <ul className='category-dep2'
                   ref={suggestMenuRef}

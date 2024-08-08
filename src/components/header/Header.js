@@ -62,8 +62,7 @@ const Header = () => {
   }
 
   return (
-    <header className='header'>
-      <div className='header-in'>
+  <div className='header-in'>
         <h1 className='logo'>
             <a href="/">mealkit</a>
         </h1> 
@@ -245,8 +244,7 @@ const Header = () => {
           </ul>
         </div>
         {/* 마이메뉴 */}
-      </div>
-    </header>
+  </div>
   )
 }
 
