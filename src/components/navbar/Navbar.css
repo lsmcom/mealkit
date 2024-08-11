@@ -5,8 +5,10 @@
 .main-nav .main-in{
     position: relative;
     width: 1200px;
+    min-width: 1200px;
+    max-width: 1200px;
     height: 100%;
-    margin: 0 432px;
+    margin: 0 auto;
     padding-left: 178px;
     box-sizing: content-box;
     padding-left: 178px;

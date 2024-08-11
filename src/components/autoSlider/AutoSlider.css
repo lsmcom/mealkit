@@ -1,0 +1,44 @@
+a{
+    background: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-area{
+    width: 100%;
+    height: 450px;
+}
+.main-area .main-slide{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    width: 1920px;
+    margin-left: -960px;
+    max-width: none;
+    top: 0;
+}
+.swiper-container{
+    margin: 0 auto;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+.swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+}
+.swiper-slide{
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.main-area .main-swiper .inner-main-swiper{
+    width: 1920px;
+    margin: auto;
+}
